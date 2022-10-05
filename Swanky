@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  List<String> tshirts = [
+    'tshirts/(1).png',
+    'tshirts/(2).png',
+    'tshirts/(3).png',
+    'tshirts/(4).png',
+    'tshirts/(5).png'
+  ];
+  List<String> pants = [
+    'pants/(1).png',
+    'pants/(2).png',
+    'pants/(3).png',
+    'pants/(4).png',
+    'pants/(5).png'
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    tshirts.shuffle();
+    pants.shuffle();
+    String imageup;
+    String imagedown;
+    imageup = tshirts[0];
+    imagedown = pants[0];
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.purple[600]!),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Todays dress'),
+        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Image.asset(imageup),
+                width: 350,
+                height: 250,
+              Image.asset(imagedown),
+                width: 350,
+                height: 250,
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
