@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   List<String> tshirts = [
     'tshirts/(1).png',
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
     'pants/(4).png',
     'pants/(5).png'
   ];
+
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +38,8 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             children: <Widget>[
-              Image.asset(imageup),
-                width: 350,
-                height: 250,
-              Image.asset(imagedown),
-                width: 350,
-                height: 250,
+              Image.asset(imageup, width: 350, height: 250),
+              Image.asset(imagedown, width: 350, height: 250),
             ],
           ),
         ),
